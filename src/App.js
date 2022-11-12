@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Form, Container, Button} from "react-bootstrap";
+
 import './App.css';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
+    <div className="Todo-App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>The Amazing Todo'er</h1>
       </header>
+
+      <div className="todo-input">
+       <Container>
+          <Form>
+            <Form.Control 
+                type="text" 
+                placeholder="Create Todo" 
+                >
+              </Form.Control>
+              <Button onClick={addTodo}>Add</Button>
+          </Form>
+
+
+       </Container>
+      </div>
     </div>
   );
 }
 
-export default App;
+function addTodo() {
+  console.log("add todo")
+}
+
+function deleteTodo() {
+  console.log("delete todo")
+}
+
+
+
