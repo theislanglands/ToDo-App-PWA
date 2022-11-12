@@ -7,19 +7,14 @@ import './App.css';
 
 export default function App() {
 
-  // Holding todo's
+  // Holding todo & input Text
   const [todos, setTodos] = useState([]);
-
-  // holding text of input field
   const [inputText, setInputText] = useState('');
   
   function handleChange(event) {
-    //console.log(event.target.value);
     setInputText(event.target.value);
-    //console.log({inputText})
   }
   
-
   return (
     <div className="Todo-App">
       <header className="App-header">
@@ -41,10 +36,7 @@ export default function App() {
 
           <div>
             {todos.map((name, index) => (  
-            <ul>  
-              {name}   
-              <Button onClick={() => deleteTodo(index)}>Delete</Button>
-            </ul>  
+            Todo(name, index)
             ))}
           </div>
 
@@ -66,4 +58,14 @@ export default function App() {
     console.log(index)
     setTodos(todos.filter((item, i) => i != index)); 
   }
+
+  function Todo(name, index) {
+    return (
+      <ul>
+        {name}  
+        <Button onClick={() => deleteTodo(index)}>Delete</Button>
+      </ul> 
+    )
+  }
 }
+
