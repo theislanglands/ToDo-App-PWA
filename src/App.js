@@ -8,7 +8,11 @@ import './App.css';
 export default function App() {
 
   // Holding todo's
-  // const {todos, setTodos} = useState([]);
+  const [todos, setTodos] = useState([
+    "en", 
+    "to",
+    "tre",
+]);
 
   // holding text of input field
   const [inputText, setInputText] = useState('');
@@ -38,6 +42,17 @@ export default function App() {
               </Form.Control>
               <Button onClick={addTodo}>Add</Button>
           </Form>
+
+          <div>
+            {todos.map((name, index) => (  
+            <ul>  
+              {name}  
+              {index}
+              <Button onClick={() => deleteTodo(index)}>Delete</Button>
+            </ul>  
+            ))}
+          </div>
+
        </Container>
       </div>
     </div>
@@ -45,20 +60,14 @@ export default function App() {
 
   function addTodo() {
     console.log("inputeText is")  
-    console.log({inputText})    
+    console.log({inputText})   
+    setTodos([...todos, inputText]) 
     setInputText("")
     }
   
 
-  function deleteTodo() {
+  function deleteTodo(index) {
     console.log("delete todo")
+    console.log(index)
   }
-
 }
-
-
-
-
-
-
-
