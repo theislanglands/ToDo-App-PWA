@@ -8,11 +8,7 @@ import './App.css';
 export default function App() {
 
   // Holding todo's
-  const [todos, setTodos] = useState([
-    "en", 
-    "to",
-    "tre",
-]);
+  const [todos, setTodos] = useState([]);
 
   // holding text of input field
   const [inputText, setInputText] = useState('');
@@ -46,8 +42,7 @@ export default function App() {
           <div>
             {todos.map((name, index) => (  
             <ul>  
-              {name}  
-              {index}
+              {name}   
               <Button onClick={() => deleteTodo(index)}>Delete</Button>
             </ul>  
             ))}
@@ -69,5 +64,6 @@ export default function App() {
   function deleteTodo(index) {
     console.log("delete todo")
     console.log(index)
+    setTodos(todos.filter((item, i) => i != index)); 
   }
 }
