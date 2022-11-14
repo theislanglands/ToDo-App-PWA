@@ -1,14 +1,11 @@
 import React from 'react';
 import { useState } from "react";
-import {Form, Container, Button} from "react-bootstrap";
+import { Form, Container, Button, Row, Col, ListGroup } from "react-bootstrap";
+
+// import bootstrao css (important) & App.css
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ListGroup from 'react-bootstrap/ListGroup';
-
-
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
 import './App.css';
+
 
 export default function App() {
 
@@ -16,52 +13,51 @@ export default function App() {
   const [todos, setTodos] = useState([]);
   const [inputText, setInputText] = useState('');
 
-  
   return (
     <Container>
-    <div className="Todo-App">
-      
-      <header className="App-header">
-        <h1>The Amazing Todo'er</h1>
-      </header>
-      
-      <div className="todo-input">
-        <Form>
-          <Row>
-            <Col></Col>
-            <Col xs={7}>
-              <Form.Control 
-                type="text" 
-                placeholder="Create Todo" 
-                value={inputText}
-                onChange={handleChange}
-                >
-              </Form.Control>
-            </Col>
-            <Col>
-              <Button onClick={addTodo}>Add</Button>
-            </Col>
-          </Row>
-        </Form>
-      </div>
-      
-      <div className='centerText'>
-        <p>My ToDo list</p>
-      </div>
+      <div className="Todo-App">
 
-      <div className='todoCards'>
-          {todos.map((name, index) => (  
+        <header className="App-header">
+          <h1>The Amazing Todo'er</h1>
+        </header>
+
+        <div className="todo-input">
+          <Form>
+            <Row>
+              <Col></Col>
+              <Col xs={7}>
+                <Form.Control
+                  type="text"
+                  placeholder="Create Todo"
+                  value={inputText}
+                  onChange={handleChange}
+                >
+                </Form.Control>
+              </Col>
+              <Col>
+                <Button onClick={addTodo}>Add</Button>
+              </Col>
+            </Row>
+          </Form>
+        </div>
+
+        <div className='centerText'>
+          <p>My ToDo list</p>
+        </div>
+
+        <div className='todoCards'>
+          {todos.map((name, index) => (
             <Container>
               <Row>
                 <Col></Col>
                 <Col xs={7}>
-                <ListGroup variant='primary'>
-                  <ListGroup.Item>
-                    <div className='cards'>
-                          {name} 
-                    </div>
-                  </ListGroup.Item> 
-                </ListGroup>
+                  <ListGroup variant='primary'>
+                    <ListGroup.Item>
+                      <div className='cards'>
+                        {name}
+                      </div>
+                    </ListGroup.Item>
+                  </ListGroup>
                 </Col>
                 <Col>
                   <div className='cardButton'>
@@ -71,23 +67,23 @@ export default function App() {
               </Row>
             </Container>
           ))}
-        
+        </div>
       </div>
-  </div>
-  </Container>
-    
+    </Container>
   );
 
-  function addTodo() { 
-    setTodos([...todos, inputText]) 
-    setInputText("")
+  function addTodo() {
+    if (inputText.length != 0) {
+      setTodos([...todos, inputText])
+      setInputText("")
     }
-  
+  }
 
   function deleteTodo(index) {
-    setTodos(todos.filter((item, i) => i != index)); 
+    setTodos(todos.filter((item, i) => i != index));
   }
-    
+
+  // handles update of inputform, when user types!
   function handleChange(event) {
     setInputText(event.target.value);
   }

@@ -1,5 +1,5 @@
 .Todo-App {
-  background-color: #c3c1c1;
+  background-color: #F5BF00;
   min-height: 100vh;
 }
 
@@ -7,11 +7,12 @@
   text-align: center;
   min-height: 24vh;
   font-size: calc(10px + 2vmin);
-  color: rgb(76, 67, 67);
+  color: #614C00;
+
 }
 
 .todo-input {
-  color:rgb(76, 67, 67);
+  color:#AD9749;
   margin-bottom: calc(5px + 2vmin);
   min-height: 10vh;
 }
@@ -22,15 +23,18 @@
 
 .cards { 
   text-align: left;
+  color: #614C00;
 }
 
 .cardButton {
-  color:rgb(76, 67, 67)
+  color: #614C00;
 }
 
 .centerText {
   text-align: center;
   min-height: 5vh;
+  font-size: calc(10px + 2vmin);
+  color: #614C00;
 }
 
 
