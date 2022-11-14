@@ -1,7 +1,5 @@
 .Todo-App {
-
   background-color: #c3c1c1;
-
 }
 
 .App-header {
@@ -12,23 +10,16 @@
 }
 
 .todo-input {
-
   color:rgb(76, 67, 67);
 }
 
-
 .cards { 
-  background-color: #f8f8f8;
-  border: 1px solid black;
-  width: 200px;
-  height: 20px;
+  text-align: left;
 }
 
 .cardButton {
   color:rgb(76, 67, 67)
 }
 
-.todoCards {
-  display: inline;
-}
+
 

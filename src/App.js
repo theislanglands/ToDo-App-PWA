@@ -21,47 +21,61 @@ export default function App() {
     <Container>
     <div className="Todo-App">
       
-        <header className="App-header">
-          <h1>The Amazing Todo'er</h1>
-        </header>
+      <header className="App-header">
+        <h1>The Amazing Todo'er</h1>
+      </header>
       
       <div className="todo-input">
-          <Form>
-            <Row>
-              <Col></Col>
-              <Col xs={8}>
-                <Form.Control 
-                  type="text" 
-                  placeholder="Create Todo" 
-                  value={inputText}
-                  onChange={handleChange}
-                  >
-                </Form.Control>
-              </Col>
-              <Col>
-                <Button onClick={addTodo}>Add</Button>
-              </Col>
-            </Row>
-          </Form>
-
-          <div className='todoCards'>
-            <ListGroup>
-              {todos.map((name, index) => (  
-                <ListGroup.Item>
-                  <div className='cards' align='left'>
-                        {name} 
-                  </div>
-                  <div align='right'></div>
-                  <Button className='cardButton' onClick={() => deleteTodo(index)}>Delete</Button>
-                </ListGroup.Item> 
-              ))}
-            </ListGroup>
-          </div>
-
+        <Form>
+          <Row>
+            <Col></Col>
+            <Col xs={8}>
+              <Form.Control 
+                type="text" 
+                placeholder="Create Todo" 
+                value={inputText}
+                onChange={handleChange}
+                >
+              </Form.Control>
+            </Col>
+            <Col>
+              <Button onClick={addTodo}>Add</Button>
+            </Col>
+          </Row>
+        </Form>
       </div>
+
+
+      <div className='todoCards'>
+        
+          {todos.map((name, index) => (  
+            <Container>
+              <Row>
+                <Col></Col>
+                <Col xs={8}>
+                <ListGroup>
+                  <ListGroup.Item>
+                    <div className='cards'>
+                          {name} 
+                    </div>
+                  </ListGroup.Item> 
+                </ListGroup>
+                </Col>
+                <Col>
+                  <div className='cardButton'>
+                    <Button onClick={() => deleteTodo(index)}>Delete</Button>
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          ))}
+        
+      </div>
+
+
       
-    </div>
-    </Container>
+  </div>
+  </Container>
     
   );
 
