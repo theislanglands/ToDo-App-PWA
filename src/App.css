@@ -1,20 +1,18 @@
 .Todo-App {
-  text-align: center;
+
   background-color: #c3c1c1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
 }
 
 .App-header {
+  text-align: center;
   min-height: 24vh;
   font-size: calc(10px + 2vmin);
   color: rgb(76, 67, 67);
 }
 
 .todo-input {
+
   color:rgb(76, 67, 67);
 }
 

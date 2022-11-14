@@ -3,6 +3,9 @@ import { useState } from "react";
 import {Form, Container, Button, Card} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import './App.css';
 
 export default function App() {
@@ -10,10 +13,7 @@ export default function App() {
   // Holding todo & input Text
   const [todos, setTodos] = useState([]);
   const [inputText, setInputText] = useState('');
-  
-  function handleChange(event) {
-    setInputText(event.target.value);
-  }
+
   
   return (
     <Container>
@@ -25,16 +25,23 @@ export default function App() {
       
       <div className="todo-input">
           <Form>
-            <Form.Control 
-                type="text" 
-                placeholder="Create Todo" 
-                value={inputText}
-                onChange={handleChange}
-                >
-              </Form.Control>
-              <Button onClick={addTodo}>Add</Button>
+            <Row>
+              <Col></Col>
+              <Col xs={8}>
+                <Form.Control 
+                  type="text" 
+                  placeholder="Create Todo" 
+                  value={inputText}
+                  onChange={handleChange}
+                  >
+                </Form.Control>
+              </Col>
+              <Col>
+                <Button onClick={addTodo}>Add</Button>
+              </Col>
+            </Row>
           </Form>
-
+          
           <div className='todoCards'>
             {todos.map((name, index) => (  
               <ul>
@@ -63,6 +70,8 @@ export default function App() {
   function deleteTodo(index) {
     setTodos(todos.filter((item, i) => i != index)); 
   }
-
-  
+    
+  function handleChange(event) {
+    setInputText(event.target.value);
+  }
 }
