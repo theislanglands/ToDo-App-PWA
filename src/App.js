@@ -1,7 +1,9 @@
 import React from 'react';
 import { useState } from "react";
-import {Form, Container, Button, Card} from "react-bootstrap";
+import {Form, Container, Button} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ListGroup from 'react-bootstrap/ListGroup';
+
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -41,17 +43,19 @@ export default function App() {
               </Col>
             </Row>
           </Form>
-          
+
           <div className='todoCards'>
-            {todos.map((name, index) => (  
-              <ul>
-                <div className='cards' align='left'>
-                      {name} 
-                </div>
-                <div align='right'></div>
-                <Button className='cardButton' onClick={() => deleteTodo(index)}>Delete</Button>
-            </ul> 
-            ))}
+            <ListGroup>
+              {todos.map((name, index) => (  
+                <ListGroup.Item>
+                  <div className='cards' align='left'>
+                        {name} 
+                  </div>
+                  <div align='right'></div>
+                  <Button className='cardButton' onClick={() => deleteTodo(index)}>Delete</Button>
+                </ListGroup.Item> 
+              ))}
+            </ListGroup>
           </div>
 
       </div>
