@@ -29,7 +29,7 @@ export default function App() {
         <Form>
           <Row>
             <Col></Col>
-            <Col xs={8}>
+            <Col xs={7}>
               <Form.Control 
                 type="text" 
                 placeholder="Create Todo" 
@@ -44,16 +44,18 @@ export default function App() {
           </Row>
         </Form>
       </div>
-
+      
+      <div className='centerText'>
+        <p>My ToDo list</p>
+      </div>
 
       <div className='todoCards'>
-        
           {todos.map((name, index) => (  
             <Container>
               <Row>
                 <Col></Col>
-                <Col xs={8}>
-                <ListGroup>
+                <Col xs={7}>
+                <ListGroup variant='primary'>
                   <ListGroup.Item>
                     <div className='cards'>
                           {name} 
@@ -71,9 +73,6 @@ export default function App() {
           ))}
         
       </div>
-
-
-      
   </div>
   </Container>
     

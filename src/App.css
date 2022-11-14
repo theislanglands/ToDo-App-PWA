@@ -1,5 +1,6 @@
 .Todo-App {
   background-color: #c3c1c1;
+  min-height: 100vh;
 }
 
 .App-header {
@@ -11,6 +12,12 @@
 
 .todo-input {
   color:rgb(76, 67, 67);
+  margin-bottom: calc(5px + 2vmin);
+  min-height: 10vh;
+}
+
+.todoCards {
+  margin-bottom: calc(5px + 2vmin);
 }
 
 .cards { 
@@ -19,6 +26,11 @@
 
 .cardButton {
   color:rgb(76, 67, 67)
+}
+
+.centerText {
+  text-align: center;
+  min-height: 5vh;
 }
 
 
