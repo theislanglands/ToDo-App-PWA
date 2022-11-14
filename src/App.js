@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from "react";
-import {Form, Container, Button} from "react-bootstrap";
-// import todo from './todoItem';
+import {Form, Container, Button, Card} from "react-bootstrap";
 
 import './App.css';
 
@@ -16,13 +15,13 @@ export default function App() {
   }
   
   return (
+    <Container>
     <div className="Todo-App">
       <header className="App-header">
         <h1>The Amazing Todo'er</h1>
       </header>
 
       <div className="todo-input">
-       <Container>
           <Form>
             <Form.Control 
                 type="text" 
@@ -34,38 +33,32 @@ export default function App() {
               <Button onClick={addTodo}>Add</Button>
           </Form>
 
-          <div>
+          <div className='todoCards'>
             {todos.map((name, index) => (  
-            Todo(name, index)
+              <ul>
+                <div className='cards' align='left'>
+                      {name} 
+                </div>
+                <div align='right'></div>
+                <Button className='cardButton' onClick={() => deleteTodo(index)}>Delete</Button>
+            </ul> 
             ))}
           </div>
 
-       </Container>
       </div>
     </div>
+    </Container>
   );
 
-  function addTodo() {
-    console.log("inputeText is")  
-    console.log({inputText})   
+  function addTodo() { 
     setTodos([...todos, inputText]) 
     setInputText("")
     }
   
 
   function deleteTodo(index) {
-    console.log("delete todo")
-    console.log(index)
     setTodos(todos.filter((item, i) => i != index)); 
   }
 
-  function Todo(name, index) {
-    return (
-      <ul>
-        {name}  
-        <Button onClick={() => deleteTodo(index)}>Delete</Button>
-      </ul> 
-    )
-  }
+  
 }
-
