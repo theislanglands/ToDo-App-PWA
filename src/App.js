@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from "react";
 import {Form, Container, Button, Card} from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 
@@ -17,10 +18,11 @@ export default function App() {
   return (
     <Container>
     <div className="Todo-App">
-      <header className="App-header">
-        <h1>The Amazing Todo'er</h1>
-      </header>
-
+      
+        <header className="App-header">
+          <h1>The Amazing Todo'er</h1>
+        </header>
+      
       <div className="todo-input">
           <Form>
             <Form.Control 
@@ -46,8 +48,10 @@ export default function App() {
           </div>
 
       </div>
+      
     </div>
     </Container>
+    
   );
 
   function addTodo() { 
