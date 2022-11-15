@@ -6,9 +6,8 @@
 .App-header {
   text-align: center;
   min-height: 24vh;
-  font-size: calc(10px + 2vmin);
   color: #614C00;
-
+  font-size: 40px;
 }
 
 .todo-input {
@@ -37,5 +36,14 @@
   color: #614C00;
 }
 
+@media screen and (max-width: 600px) {
+  
+  .App-header {
+    text-align: center;
+    min-height: 12vh;
+    color: #614C00;
+    font-size: 25px;
+  }
+}
 
 

@@ -17,8 +17,8 @@ export default function App() {
     <Container>
       <div className="Todo-App">
 
-        <header className="App-header">
-          <h1>The Amazing Todo'er</h1>
+        <header>
+          <h1 className="App-header">The Amazing Todo'er</h1>
         </header>
 
         <div className="todo-input">
